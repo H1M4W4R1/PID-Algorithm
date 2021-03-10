@@ -5,22 +5,21 @@
 #ifndef PID_H
 #define PID_H
 
-#include <cinttypes>
-
+#include <inttypes.h>
 
 class PID {
 private:
     // PID constants
-    uint32_t k_p = 90;
-    uint32_t k_i = 30;
-    uint32_t k_d = 80;
-    uint32_t errOffset = 3;
+    int32_t k_p = 90;
+    int32_t k_i = 30;
+    int32_t k_d = 80;
+    int32_t errOffset = 3;
 
     // Algorithm settings
     int32_t targetValue = 50;
     int32_t pwmMaxValue = 256;
 
-    // Internal variablesy
+    // Internal variables
     int32_t pid_i;
     int32_t last_error;
 
@@ -32,13 +31,13 @@ public:
     PID* setPwmMaxValue(int32_t value);
 
     // Set error offset for your load (default: 3 for heater in mini-oven)
-    PID* setErrorOffset(uint32_t offset);
+    PID* setErrorOffset(int32_t offset);
 
     // Calculate your PID value by read and time delay
-    uint32_t calculatePWM(int32_t readValue, int32_t deltaTime_ms);
+    int32_t calculatePWM(int32_t readValue, int32_t deltaTime_ms);
 
     // Create virtual PID controller
-    PID(uint32_t kp, uint32_t ki, uint32_t kd);
+    PID(int32_t kp, int32_t ki, int32_t kd);
 };
 
 
