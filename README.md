@@ -1,5 +1,7 @@
 # PID-Algorithm
-PID Algorithm implementation in C++ (to be used with MCU's). Not tested yet - use at own risk.
+PID Algorithm implementation in C++ (to be used with MCU's).  
+Tested on Arduino Nano using Microchip Studio. Working properly.  
+Ambient temperature: 24C, target temp: 40C, heating method: hotair, PWM changes appeared between 35 and 45 deg. Centigrade.  
 
 # How to use?
 ```cpp
